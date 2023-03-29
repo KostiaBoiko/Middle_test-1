@@ -29,5 +29,10 @@ class Loader:
         same_lines = set(file1).intersection(file2)
         return same_lines
 
+    # Знаходимо рядки, які містяться лише в одному з файлів
+    def write_diff_lines(self, file1, file2):
+        diff_lines = set(file1).symmetric_difference(file2)
+        return diff_lines
+
 
 
