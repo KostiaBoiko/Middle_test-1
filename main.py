@@ -34,5 +34,18 @@ class Loader:
         diff_lines = set(file1).symmetric_difference(file2)
         return diff_lines
 
+    # Записуємо результати в файли same.txt та diff.txt
+    def write_to_files(self, same_lines, diff_lines):
+        with open(os.path.join(self.folder_path, "same.txt"), "w") as same_file:
+            for line in same_lines:
+                same_file.write(line)
+
+        with open(os.path.join(self.folder_path, "diff.txt"), "w") as diff_file:
+            for line in diff_lines:
+                diff_file.write(line)
+
+
+
+
 
 
