@@ -1,4 +1,3 @@
-dio
-viper
+tedkodio
 yamaha
-tedko
+viper
