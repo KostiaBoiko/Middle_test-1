@@ -35,17 +35,22 @@ class Loader:
         return diff_lines
 
     # Записуємо результати в файли same.txt та diff.txt
-    def write_to_files(self, same_lines, diff_lines):
+    def write_to_files(self, samelines, difflines):
         with open(os.path.join(self.folder_path, "same.txt"), "w") as same_file:
-            for line in same_lines:
+            for line in samelines:
                 same_file.write(line)
 
         with open(os.path.join(self.folder_path, "diff.txt"), "w") as diff_file:
-            for line in diff_lines:
+            for line in difflines:
                 diff_file.write(line)
 
 
 
+loader = Loader()
+file_1, file_2 = loader.read_files()
+same_lines = loader.write_same_lines(file_1, file_2)
+diff_lines = loader.write_diff_lines(file_1, file_2)
+loader.write_to_files(same_lines, diff_lines)
 
 
 
