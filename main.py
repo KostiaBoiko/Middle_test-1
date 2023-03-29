@@ -13,3 +13,11 @@ folder_path = "files"
 file1_lines = []
 file2_lines = []
 
+# Зчитуємо файли з теки з розширенням .txt
+for file_name in os.listdir(folder_path):
+    if file_name.endswith(".txt"):
+        with open(os.path.join(folder_path, file_name), "r") as f:
+            if file_name == "file_1.txt":
+                file1_lines = f.readlines()
+            elif file_name == "file_2.txt":
+                file2_lines = f.readlines()
